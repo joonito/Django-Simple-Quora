@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 
 def index(request):
     """
-    pybo 목록 출력
+    quora 목록 출력
     """
     page = request.GET.get('page', '1')
     question_list = Question.objects.order_by('-create_date')
@@ -18,22 +18,22 @@ def index(request):
     page_obj = paginator.get_page(page)
 
     context = {'question_list': page_obj}
-    return render(request, 'pybo/question_list.html', context)
+    return render(request, 'quora/question_list.html', context)
 
 
 def detail(request, question_id):
     """
-    pybo 내용 출력
+    quora 내용 출력
     """
     #question = Question.objects.get(id=question_id)
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
-    return render(request, 'pybo/question_detail.html', context)
+    return render(request, 'quora/question_detail.html', context)
 
 
 def answer_create(request, question_id):
     """
-    pybo 답변 등록
+    quora 답변 등록
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.method == "POST":
@@ -43,16 +43,16 @@ def answer_create(request, question_id):
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
-            return redirect('pybo:detail', question_id=question.id)
+            return redirect('quora:detail', question_id=question.id)
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}
-    return render(request, 'pybo/question_detail.html', context)
+    return render(request, 'quora/question_detail.html', context)
 
 
 def question_create(request):
     """
-    pybo 질문 등록
+    quora 질문 등록
     """
     if request.method == 'POST':
         form = QuestionForm(request.POST)
@@ -60,8 +60,8 @@ def question_create(request):
             question = form.save(commit=False)
             question.create_date = timezone.now()
             question.save()
-            return redirect('pybo:index')
+            return redirect('quora:index')
     else:
         form = QuestionForm()
     context = {'form': form}
-    return render(request, 'pybo/question_form.html', context)
+    return render(request, 'quora/question_form.html', context)

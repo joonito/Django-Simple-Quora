@@ -13,14 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from project.pybo.views import index
+# from project.quora.views import index
 from django.contrib import admin
 from django.urls import path, include
-from pybo import views
+from quora import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pybo/', include('pybo.urls')),
+    path('quora/', include('quora.urls')),
     path('common/', include('common.urls')),
     path('', views.index, name='index'),
 ]

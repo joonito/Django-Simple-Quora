@@ -25,13 +25,13 @@ SECRET_KEY = 'django-insecure-ozhk%o8vc%b)3ihod)gl**$n8@p6b48wtu%u-ziwc4#fo=ij**
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.15']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'pybo.apps.PyboConfig',
+    'quora.apps.quoraConfig',
     'common.apps.CommonConfig',
     'django.contrib.admin',
     'django.contrib.auth',

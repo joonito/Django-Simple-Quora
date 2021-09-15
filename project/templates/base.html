@@ -1,19 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Hello, pybo!</title>
-</head>
-<body>
-    {% include "navbar.html" %}
-    {% block content %}
-    {% endblock %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>Hello, quora!</title>
+  </head>
+  <body>
+    {% include "navbar.html" %} {% block content %} {% endblock %}
     <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'bootstrap.min.js' %}"></script>
-</body>
+  </body>
 </html>

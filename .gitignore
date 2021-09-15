@@ -1,3 +1,4 @@
 project/db.sqlite3
 project/*.pyc
 project/__pycache__
+project/config/settings.py
