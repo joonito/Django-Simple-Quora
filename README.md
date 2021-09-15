@@ -1,4 +1,4 @@
-# Django-social-media
+# Django-Simple-Quora
 
 ![An image will show up please wait](images/AnswerQuestion.png)
 ![An image will show up please wait](images/AnswerQuestion2.png)
